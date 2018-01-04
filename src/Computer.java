@@ -117,4 +117,10 @@ public class Computer
 		this.anno = anno;
 	}
 
+	public String toString()
+	{
+		return ("Caratteristiche PC codice: "+getCodice()+"\nMarca: "+getMarca()+
+				"\nModello: "+getModello()+"\nprocessore: "+getVelocitaGhz()+" GHz"+"\nRAM: "+getRamGb()+
+				" Gb"+"\nHD: "+getDiscoGb()+" Gb"+"\nmonitor: "+getMonitorPollici()+" pollici"+"\nanno: "+getAnno());
+	}
 }

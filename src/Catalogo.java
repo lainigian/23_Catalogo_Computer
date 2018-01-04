@@ -62,6 +62,8 @@ public class Catalogo
 		}
 		return contatore;
 	}
+	
+	
 }	// end class
 
 	
