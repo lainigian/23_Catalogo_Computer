@@ -63,6 +63,20 @@ public class Catalogo
 		return contatore;
 	}
 	
+	//	Ricerca un computer per codice
+	//	null-->Computer non trovato
+	public Computer ricercaComputer (int codice)
+	{
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getCodice()==codice)
+					return new Computer(elencoComputer[i]);
+			}
+		}
+		return null;
+	}
 	
 }	// end class
 
