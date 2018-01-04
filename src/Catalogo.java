@@ -3,11 +3,11 @@ public class Catalogo
 {
 	//	Attributi
 	private Computer[] elencoComputer;
-	private final int MAX_NUMERO_COMPUTER=1000;
+	private static final int MAX_NUMERO_COMPUTER=1000;
 	
 	
 	//	Costruttori
-	public void Catalogo()
+	public Catalogo()
 	{
 		elencoComputer=new Computer[MAX_NUMERO_COMPUTER];
 	}
@@ -31,11 +31,41 @@ public class Catalogo
 		}
 		return -1;			//elenco pieno, aggiornamento fallito
 	}
-}
+	
+	
+	//	Elimina computer dalla coda ponendo al posto del computer eliminato un puntatore a null
+	// 	0-->ok
+	//	-1--> Computer non trovato
+	public int eliminaComputer (int codice)
+	{
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getCodice()==codice)
+				{
+					elencoComputer[i]=null;
+					return 0;
+				}
+			}
+		}
+		return -1;
+	}
+	
+	public int getNumeroComputer()
+	{
+		int contatore=0;
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+				contatore++;
+		}
+		return contatore;
+	}
+}	// end class
 
 	
-
-	public int 
+	
 
 
 

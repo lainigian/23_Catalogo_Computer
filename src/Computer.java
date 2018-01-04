@@ -3,7 +3,7 @@ public class Computer
 {
 	
 	//	Attributi
-	private static int contatoreComputer=0;
+	//private static int contatoreComputer=0;
 	private  int codice;
 	private String marca;
 	private String modello;
@@ -15,10 +15,10 @@ public class Computer
 	
 	
 	//	Costruttori
-	public Computer (String marca,String modello, float velocitaGhz,float ramGb,float discoGb, float monitorPollici, int anno )
+	public Computer (int codice,String marca,String modello, float velocitaGhz,float ramGb,float discoGb, float monitorPollici, int anno )
 	{
-		contatoreComputer++;
-		codice=contatoreComputer;	//il codice si incrementa automaticamente per ogni nuovo computer
+		
+		this.codice=codice;	//il codice si incrementa automaticamente per ogni nuovo computer
 		setMarca(marca);
 		setModello(modello);
 		setVelocitaGhz(velocitaGhz);
@@ -31,8 +31,8 @@ public class Computer
 	//	Costruttore di copia
 	public Computer (Computer computer)
 	{
-		contatoreComputer++;
-		codice=contatoreComputer;	//il codice si incrementa automaticamente per ogni nuovo computer		
+		
+		codice=computer.getCodice();	//il codice si incrementa automaticamente per ogni nuovo computer		
 		setMarca(computer.getMarca());
 		setModello(computer.getModello());
 		setVelocitaGhz(computer.getVelocitaGhz());
