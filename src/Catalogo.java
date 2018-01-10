@@ -97,16 +97,53 @@ public class Catalogo
 			return null;
 		
 		Computer[] computerRam=new Computer[contatore];
-		
+		int j=0;
 		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
 		{
 			if (elencoComputer[i]!=null)
 			{
 				if (elencoComputer[i].getRamGb()>=ramMinima)
-					computerRam[i]=new Computer(elencoComputer[i]);
+				{
+					computerRam[j]=new Computer(elencoComputer[i]);
+					j++;
+				}	
 			}
 		}			
 		return computerRam;
+	}
+	
+	//	Ricerca e restituisce una array contenente 
+	//	i computer (una copia) che hanno dimensione del disco superiore ad un
+	// 	certo valore minimo
+	public Computer[] ricercaComputerDisco (float discoMinimo)
+	{
+		int contatore=0;
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getDiscoGb()>=discoMinimo)
+					contatore++;
+			}
+			
+		}
+		if (contatore==0)
+			return null;
+		
+		Computer[] computerDisco=new Computer[contatore];
+		int j=0;
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getDiscoGb()>=discoMinimo)
+				{
+					computerDisco[j]=new Computer(elencoComputer[i]);
+					j++;
+				}	
+			}
+		}			
+		return computerDisco;
 	}
 	
 }	// end class

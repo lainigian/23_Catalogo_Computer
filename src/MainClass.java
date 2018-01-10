@@ -12,7 +12,7 @@ public class MainClass
 		Computer c2=new Computer(catalogo.getNumeroComputer()+1,  "Fujitsu", "Lifebook B series", 1, 4, 500, 15, 2017);
 		catalogo.setComputer(c2);
 		
-		Computer c3=new Computer(catalogo.getNumeroComputer()+1,  "Dell", "ProDell A series", 1, 2, 500, 15, 2015);
+		Computer c3=new Computer(catalogo.getNumeroComputer()+1,  "Dell", "ProDell A series", 1, 2, 1000, 15, 2015);
 		catalogo.setComputer(c3);
 		
 		Computer computer=null;
@@ -30,6 +30,13 @@ public class MainClass
 		{
 			System.out.println(computerRam[i].getMarca()+" "+computerRam[i].getModello()+ " Ram: "+computerRam[i].getRamGb()+" Gbyte");
 		}
+		
+		Computer[] computerDisco=catalogo.ricercaComputerDisco(1000);
+		for (int i = 0; i < computerDisco.length; i++) 
+		{
+			System.out.println(computerDisco[i].getMarca()+" "+computerDisco[i].getModello()+ " HD: "+computerDisco[i].getDiscoGb()+" Gbyte");
+		}
+		
 		
 	}
 	
