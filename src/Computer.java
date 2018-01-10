@@ -41,6 +41,19 @@ public class Computer
 		setMonitorPollici(computer.getMonitorPollici());
 		setAnno(computer.getAnno());
 	}
+	
+	//	Costruttore di default
+	public Computer(int codice)
+	{
+		this.codice=codice;	//il codice si incrementa automaticamente per ogni nuovo computer		
+		setMarca("");
+		setModello("");
+		setVelocitaGhz(0);
+		setRamGb(0);
+		setDiscoGb(0);
+		setMonitorPollici(0);
+		setAnno(0);	
+	}
 	//	Setter e Getter
 	public int getCodice()
 	{
