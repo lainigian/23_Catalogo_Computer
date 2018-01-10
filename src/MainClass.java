@@ -7,15 +7,15 @@ public class MainClass
 	{
 		// TODO Auto-generated method stub
 		
-		// insrimento 3 PC per testing delle funzioni
 		Catalogo catalogo=new Catalogo();
+		// insrimento 3 PC per testing delle funzioni....................................................................
 		Computer c1=new Computer(catalogo.getNumeroComputer()+1,  "Fujitsu", "Lifebook A series", 2, 4, 500, 15, 2017);
 		catalogo.setComputer(c1);
 		Computer c2=new Computer(catalogo.getNumeroComputer()+1,  "Fujitsu", "Lifebook B series", 1, 4, 500, 15, 2017);
 		catalogo.setComputer(c2);
-		
 		Computer c3=new Computer(catalogo.getNumeroComputer()+1,  "Dell", "ProDell A series", 1, 2, 1000, 15, 2015);
 		catalogo.setComputer(c3);
+		//...............................................................................................................
 		
 		Menu menu=new Menu();
 		int sceltaMenu=0;
@@ -26,6 +26,8 @@ public class MainClass
 			sceltaMenu=menu.scelta();
 			switch (sceltaMenu) 
 			{
+				case 0:
+					break;
 				case 1:	//	in manutenzione evolutiva sarebbe opportuno realizzare il sottomenu "InserimentoComputer" con una classe
 				{
 					Computer c=new Computer(catalogo.getNumeroComputer()+1);	//unico parametro il codice autoincrementale
@@ -140,62 +142,22 @@ public class MainClass
 			tastiera.nextLine();
 		}while (sceltaMenu!=0);
 		
-	/*	Computer computer=null;
-		int codice=2;
-		if (catalogo.ricercaComputer(codice)!=null)
-		{
-			computer=catalogo.ricercaComputer(codice);
-			System.out.println(computer.toString());
-		}
-		else
-			System.out.println("computer con codice "+codice+ " non presente");
+		Catalogo catalogoCopia=new Catalogo(catalogo);
+		System.out.println("PC catalogo copia: ");
+
 		
-		Computer[] computerRam=catalogo.ricercaComputerRam(4);
-		if (computerRam==null)
+		//test creazione catalogo copia;
+		int j=0;
+		while(j<catalogoCopia.getNumeroComputer())
 		{
-			System.out.println("Nessun computer soddisfa le specifiche richieste");
-		}
-		else
-		{
-			for (int i = 0; i < computerRam.length; i++) 
+			if (catalogoCopia.getComputer(j)!=null)
 			{
-				System.out.println(computerRam[i].getMarca()+" "+computerRam[i].getModello()+ " Ram: "+computerRam[i].getRamGb()+" Gbyte");
+				System.out.println(catalogoCopia.getComputer(j).toString()+"\n");
+				j++;
 			}
 		}
-			
 		
-		
-		Computer[] computerDisco=catalogo.ricercaComputerDisco(1000);
-		if (computerDisco==null)
-		{
-			System.out.println("Nessun computer soddisfa le specifiche richieste");	
-		}
-		else
-		{
-			for (int i = 0; i < computerDisco.length; i++) 
-			{
-				System.out.println(computerDisco[i].getMarca()+" "+computerDisco[i].getModello()+ " HD: "+computerDisco[i].getDiscoGb()+" Gbyte");
-			}
-			
-		}
-			
-		
-		Computer[] computerProcessore=catalogo.ricercaComputerProcessore(1);
-		if (computerProcessore==null)
-		{
-			System.out.println("Nessun computer soddisfa le specifiche richieste");	
-		}
-		else
-		{
-			for (int i = 0; i < computerProcessore.length; i++) 
-			{
-				System.out.println(computerProcessore[i].getMarca()+" "+computerProcessore[i].getModello()+ " Velocita processore (Ghz): "+computerProcessore[i].getVelocitaGhz()+" GHz");
-			}
-		}
-		*/
+	
 	}
 	
-	
-	
-
 }

@@ -12,6 +12,15 @@ public class Catalogo
 		elencoComputer=new Computer[MAX_NUMERO_COMPUTER];
 	}
 	
+	public Catalogo (Catalogo c)
+	{
+		elencoComputer=new Computer[MAX_NUMERO_COMPUTER];
+		for (int i = 0; i < c.MAX_NUMERO_COMPUTER; i++)
+		{
+			if (c.getComputer(i)!=null)
+				setComputer(new Computer(c.getComputer(i)));	
+		}
+	}
 	
 	
 	//	Altri Metodi
@@ -32,7 +41,16 @@ public class Catalogo
 		return -1;			//elenco pieno, aggiornamento fallito
 	}
 	
-	
+	//	Ricerca il computer in una determinata posizione dell'elenco
+	//	null-->posizione non valida o computer non trovato
+	public Computer getComputer (int posizione)
+	{
+		if (posizione<0 || posizione>= MAX_NUMERO_COMPUTER)
+			return null;
+		if (elencoComputer[posizione]!=null)
+				return new Computer(elencoComputer[posizione]);
+		return null;
+	}
 	//	Elimina computer dalla coda ponendo al posto del computer eliminato un puntatore a null
 	// 	0-->ok
 	//	-1--> Computer non trovato
