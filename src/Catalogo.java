@@ -78,6 +78,37 @@ public class Catalogo
 		return null;
 	}
 	
+	//	Ricerca e restituisce una array contenente 
+	//	i computer (una copia) che hanno Ram superiore ad un
+	// 	certo valore minimo
+	public Computer[] ricercaComputerRam (float ramMinima)
+	{
+		int contatore=0;
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getRamGb()>=ramMinima)
+					contatore++;
+			}
+			
+		}
+		if (contatore==0)
+			return null;
+		
+		Computer[] computerRam=new Computer[contatore];
+		
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getRamGb()>=ramMinima)
+					computerRam[i]=new Computer(elencoComputer[i]);
+			}
+		}			
+		return computerRam;
+	}
+	
 }	// end class
 
 	
