@@ -146,6 +146,40 @@ public class Catalogo
 		return computerDisco;
 	}
 	
+	//	Ricerca e restituisce una array contenente 
+	//	i computer (una copia) che hanno velocità del processore superiore ad un
+	// 	certo valore minimo
+	public Computer[] ricercaComputerProcessore (float velocita)
+	{
+		int contatore=0;
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getVelocitaGhz()>=velocita)
+					contatore++;
+			}
+			
+		}
+		if (contatore==0)
+			return null;
+		
+		Computer[] computerVelocita=new Computer[contatore];
+		int j=0;
+		for (int i = 0; i < MAX_NUMERO_COMPUTER; i++) 
+		{
+			if (elencoComputer[i]!=null)
+			{
+				if (elencoComputer[i].getVelocitaGhz()>=velocita)
+				{
+					computerVelocita[j]=new Computer(elencoComputer[i]);
+					j++;
+				}	
+			}
+		}			
+		return computerVelocita;
+	}
+	
 }	// end class
 
 	

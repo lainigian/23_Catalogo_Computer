@@ -26,17 +26,47 @@ public class MainClass
 			System.out.println("computer con codice "+codice+ " non presente");
 		
 		Computer[] computerRam=catalogo.ricercaComputerRam(4);
-		for (int i = 0; i < computerRam.length; i++) 
+		if (computerRam==null)
 		{
-			System.out.println(computerRam[i].getMarca()+" "+computerRam[i].getModello()+ " Ram: "+computerRam[i].getRamGb()+" Gbyte");
+			System.out.println("Nessun computer soddisfa le specifiche richieste");
 		}
+		else
+		{
+			for (int i = 0; i < computerRam.length; i++) 
+			{
+				System.out.println(computerRam[i].getMarca()+" "+computerRam[i].getModello()+ " Ram: "+computerRam[i].getRamGb()+" Gbyte");
+			}
+		}
+			
+		
 		
 		Computer[] computerDisco=catalogo.ricercaComputerDisco(1000);
-		for (int i = 0; i < computerDisco.length; i++) 
+		if (computerDisco==null)
 		{
-			System.out.println(computerDisco[i].getMarca()+" "+computerDisco[i].getModello()+ " HD: "+computerDisco[i].getDiscoGb()+" Gbyte");
+			System.out.println("Nessun computer soddisfa le specifiche richieste");	
 		}
+		else
+		{
+			for (int i = 0; i < computerDisco.length; i++) 
+			{
+				System.out.println(computerDisco[i].getMarca()+" "+computerDisco[i].getModello()+ " HD: "+computerDisco[i].getDiscoGb()+" Gbyte");
+			}
+			
+		}
+			
 		
+		Computer[] computerProcessore=catalogo.ricercaComputerProcessore(1);
+		if (computerProcessore==null)
+		{
+			System.out.println("Nessun computer soddisfa le specifiche richieste");	
+		}
+		else
+		{
+			for (int i = 0; i < computerProcessore.length; i++) 
+			{
+				System.out.println(computerProcessore[i].getMarca()+" "+computerProcessore[i].getModello()+ " Velocita processore (Ghz): "+computerProcessore[i].getVelocitaGhz()+" GHz");
+			}
+		}
 		
 	}
 	
